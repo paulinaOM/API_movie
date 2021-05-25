@@ -21,6 +21,13 @@ class _FavoriteScreenState extends State<FavoriteScreen>{
     Widget build(BuildContext context){
       return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.chevron_left),
+            onPressed: (){
+              Navigator.pushNamed(context, '/dashboard');
+              
+            },
+          ),
           title: Text("Favorite movies"),
         ),
         body:FutureBuilder( 

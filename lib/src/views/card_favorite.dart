@@ -60,9 +60,8 @@ class CardFavorite extends StatelessWidget {
                           'releaseDate': favorite.releaseDate,
                           'voteAverage': favorite.voteAverage,
                           'voteCount': favorite.voteCount,
+                          'isFavorite': true,
                           }
-                        ).whenComplete(
-                          () => Navigator.pushReplacementNamed(context, '/favorite')
                         ); 
                       }, 
                       padding: EdgeInsets.symmetric(horizontal: 10.0),

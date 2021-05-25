@@ -60,6 +60,7 @@ class CardPopular extends StatelessWidget {
                           'releaseDate': popular.releaseDate,
                           'voteAverage': popular.voteAverage,
                           'voteCount': popular.voteCount,
+                          'isFavorite':false,
                           }
                         ); //recibe un mapa de argumentos
                       }, 

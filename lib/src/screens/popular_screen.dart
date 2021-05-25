@@ -23,6 +23,13 @@ class _PopularScreenState extends State<PopularScreen>{
     Widget build(BuildContext context){
       return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.chevron_left),
+            onPressed: (){
+              Navigator.pushNamed(context, '/dashboard');
+              
+            },
+          ),
           title: Text("Popular movies"),
         ),
         body:FutureBuilder( //Future builder siempre retorna un widget

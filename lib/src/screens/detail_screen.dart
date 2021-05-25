@@ -5,6 +5,8 @@ import 'package:practica2_2021/src/models/backdropdao.dart';
 import 'package:practica2_2021/src/models/videodao.dart';
 import 'package:practica2_2021/src/network/api_actor.dart';
 import 'package:practica2_2021/src/network/api_popular.dart';
+import 'package:practica2_2021/src/screens/favorite_screen.dart';
+import 'package:practica2_2021/src/screens/popular_screen.dart';
 import 'package:practica2_2021/src/views/youtube_screen.dart';
 import 'package:practica2_2021/src/views/favorite_button.dart';
 
@@ -26,6 +28,25 @@ class _DetailScreenState extends State<DetailScreen> {
       CustomScrollView ( 
         slivers: <Widget> [ 
           SliverAppBar ( 
+            leading: IconButton(
+              icon: Icon(Icons.chevron_left),
+              onPressed: (){
+                if(movie['isFavorite']){
+                  Navigator.pushAndRemoveUntil(
+                    context, 
+                    MaterialPageRoute(builder: (BuildContext context)=> FavoriteScreen()), 
+                    (route) => false
+                  );
+                }
+                else{
+                  Navigator.pushAndRemoveUntil(
+                    context, 
+                    MaterialPageRoute(builder: (BuildContext context)=> PopularScreen()), 
+                    (route) => false
+                  );
+                }
+              },
+            ),
             title: Text (movie['title']), 
             backgroundColor: Colors.black,
             expandedHeight: 400.0, 
